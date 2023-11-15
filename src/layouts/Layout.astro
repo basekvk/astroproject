@@ -1,11 +1,11 @@
 ---
-import Footer from '../components/Footer.astro';
+import Footer from "../components/Footer.astro";
 
-import Nav from '../components/Nav.astro';
+import Nav from "../components/Nav.astro";
 
 interface Props {
-	title: string;
-	descripcion: string;
+  title: string;
+  descripcion: string;
 }
 
 const { title, descripcion } = Astro.props;
@@ -13,18 +13,80 @@ const { title, descripcion } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={descripcion} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Nav />
-		<slot />
-		<Footer />
-	</body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="keywords"
+      content="desatascos, poceros, desatrancos, alcantarillado, bajantes, fosas septicas, limpieza de tuberias, limpieza de alcantarillado, limpieza de fosas septicas, limpieza de bajantes, limpieza de arquetas, limpieza de pozos, limpieza de tuberias, limpieza de alcantarillado, limpieza de fosas septicas, limpieza de bajantes, limpieza de arquetas, limpieza de pozos, limpieza de tuberias, limpieza de alcantarillado, limpieza de fosas septicas, limpieza de bajantes, limpieza de arquetas, limpieza de pozos, limpieza de tuberias, limpieza de alcantarillado, limpieza de fosas septicas, limpieza de bajantes, limpieza de arquetas, limpieza de pozos, limpieza de tuberias, limpieza de alcantarillado, limpieza de fosas septicas, limpieza de bajantes, limpieza de arquetas, limpieza de pozos, limpieza de tuberias, limpieza de alcantarillado, limpieza de fosas septicas, limpieza de bajantes, limpieza de arquetas, limpieza de pozos"
+    />
+    <meta
+      name={descripcion}
+      content="Factry - Factory and Industry Service HTML5 Template for all kinds of Construction,Factory,elementor, engineering, Technology, online bussines, Ecommerce, Shop,website"
+    />
+    <title>{title}</title>
+    <meta property="og:site_name" content="Factry" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Desatascos y Poceros en Madrid"
+    />
+    <meta name="og:image" content="images/assets/ogg.png" />
+    <!-- For IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- For Resposive Device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- For Window Tab Color -->
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#913BFF" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#913BFF" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#913BFF" />
+
+    <!-- <link rel="manifest" href="site.webmanifest" /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/fonts/bootstrap-icons/font-css.css" />
+    <link rel="stylesheet" href="/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/nice-select.css" />
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/css/metisMenu.css" />
+    <link rel="stylesheet" href="/assets/css/aos.css" />
+    <link rel="stylesheet" href="/assets/css/spacing.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <div class="main-page-wrapper">
+      <Nav />
+      <slot />
+      <Footer />
+      <!-- JS here -->
+    </div>
+    <script is:inline src="/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script is:inline src="/assets/js/vendor/popper.min.js"></script>
+    <script is:inline src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script is:inline src="/assets/js/jquery.meanmenu.js"></script>
+    <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+    <script is:inline src="/assets/js/jquery.easypiechart.min.js"></script>
+    <script is:inline src="/assets/js/jquery.counterup.min.js"></script>
+    <script is:inline src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script is:inline src="/assets/js/metisMenu.min.js"></script>
+    <script is:inline src="/assets/js/wow.min.js"></script>
+    <script is:inline src="/assets/js/jquery.waypoints.min.js"></script>
+    <script is:inline src="/assets/js/aos.js"></script>
+    <script is:inline src="/assets/js/jquery.nice-select.min.js"></script>
+    <script is:inline src="/assets/js/jquery-ui.js"></script>
+    <script is:inline src="/assets/js/jquery.scrollUp.min.js"></script>
+    <script is:inline src="/assets/js/plugins.js"></script>
+
+    <!--Custom JS here -->
+    <script is:inline src="assets/js/main.js"></script>
+  </body>
 </html>
