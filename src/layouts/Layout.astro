@@ -1,0 +1,30 @@
+---
+import Footer from '../components/Footer.astro';
+
+import Nav from '../components/Nav.astro';
+
+interface Props {
+	title: string;
+	descripcion: string;
+}
+
+const { title, descripcion } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={descripcion} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Nav />
+		<slot />
+		<Footer />
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.0/alpine.js"></script>
+</html>

@@ -1,0 +1,34 @@
+---
+const desatascos = await Astro.glob('../../data/desatascos/*.md')
+const [frontmatter] = desatascos
+const {frontmatter: data} = frontmatter
+const {title, description, slug,loren} = data
+
+
+
+
+function convertUrlsToLinks(text) {
+  const urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
+  return text.replace(urlRegex, function(url) {
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+  });
+}
+
+const processedText = convertUrlsToLinks(loren);
+---
+
+
+
+
+
+
+<div>
+    <h1 class="flex justify-center text-6xl">desatascos</h1>
+    <h2 class="flex justify-center text-6xl  w-full">{title}</h2>
+    <h3 class="flex justify-center text-6xl w-full">{description}</h3>
+    {/* <a href={description.split(' - ')[1]} target="_blank" rel="noopener noreferrer">Visitar Sitio Web</a>*/}
+    <p set:html={processedText } />  {/* Texto plano a HTML*/}
+</div>
+
+
+

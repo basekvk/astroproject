@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// Importa los archivos Markdown
+const markdownFiles = await Astro.glob("../../data/desatascos/*.md");
+
+// Obtén el slug de los parámetros
+const slug = Astro.params.slug;
+
+// Extrae los frontmatters de los archivos Markdown
+const pages = markdownFiles.map((file) => file.frontmatter);
+
+// Encuentra la página correspondiente al slug
+const page = pages.find((page) => page.slug === slug);
+---
+
+<Layout title={page?.title}>
+  {
+    page ? (
+      <>
+        <h1>Esta es la web de: {page.title}</h1>
+        <p set:html={page.loren} />{" "}
+        
+      </>
+    ) : (
+    <script>
+            window.location.href = '/404'; // Asegúrate de tener esta ruta definida
+        </script>
+    )
+  }
+</Layout>
