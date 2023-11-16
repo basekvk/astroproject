@@ -1,6 +1,8 @@
 ---
 import BannerPequeno from "../../components/BannerPequeno.astro";
 import Layout from "../../layouts/Layout.astro";
+import ServiceDetails from "../../components/ServiceDetails.astro";
+import ServiceText from "../../components/ServiceText.astro";
 
 // Importa los archivos Markdown
 const markdownFiles = await Astro.glob("../../data/desatascos/*.md");
@@ -16,18 +18,19 @@ const page = pages.find((page) => page.slug === slug);
 ---
 
 <Layout title={page?.title} descripcion="" >
-  <BannerPequeno titulo={page?.title} imagen={page?.imagen} />
+  <ServiceText />
+  
   {
     page ? (
       <>
+      <BannerPequeno titulo={page?.title} imagen={page?.imagen} />
         <h1>Esta es la web de: {page.title}</h1>
         <p set:html={page.loren} />{" "}
+        <ServiceText />
         
       </>
     ) : (
-    <script>
-            window.location.href = '/404'; // Asegúrate de tener esta ruta definida
-        </script>
+      <h1>La página no existe</h1>
     )
   }
 </Layout>
